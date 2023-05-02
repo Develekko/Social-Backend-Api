@@ -155,7 +155,7 @@ npm run dev
 
 
 ## 📖 API Documentation
-The API documentation is provided through [Postman JSON File](https://github.com/Develekko/developer.github.com/blob/4d7eae1cd2c7f8643225c84f089d2a43ca4659e3/Social-Backend-Api.postman_collection.json)
+The API documentation is provided through [Postman JSON File](./Social-Backend-Api.postman_collection.json)
 
 <h3>Follow These Steps</h3>
 
