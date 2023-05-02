@@ -10,7 +10,7 @@ const initApp = (express, app) => {
   app.use(cors())
   app.use(express.json({}));
   app.get('/',(req,res,next)=>{
-    return res.status(200).json({status:"Success",message:"welcome to social-backend-api"})
+    return res.status(200).json({status:"Success",message:"welcome to social-backend-api",docs:"https://github.com/Develekko/Social-Backend-Api#-api-documentation"})
 })
   app.use("/user", userRouter);
   app.use("/auth", authRouter);
