@@ -7,13 +7,14 @@ import cors from 'cors'
 import { globalErrorHandling } from './Utlis/ErrorHandeling.js' 
 import { deleteUserFromCloud } from './Utlis/cronJob.js'
 const initApp = (express, app) => {
-  app.use(async(req,res,next)=>{
-    res.setHeader('Access-Control-Allow-Origin','*');
-    res.setHeader('Access-Control-Allow-Headers','*');
-    res.setHeader('Access-Control-Allow-Private-Network','true');
-    res.setHeader('Access-Control-Allow-Methods','*')
-    next()
-  })
+  // app.use(async(req,res,next)=>{
+  //   res.setHeader('Access-Control-Allow-Origin','*');
+  //   res.setHeader('Access-Control-Allow-Headers','*');
+  //   res.setHeader('Access-Control-Allow-Private-Network','true');
+  //   res.setHeader('Access-Control-Allow-Methods','*')
+  //   next()
+  // })
+  app.use(cors())
   app.use(express.json({}));
   app.get('/',(req,res,next)=>{
     return res.status(200).json({status:"Success",message:"welcome to social-backend-api",docs:"https://github.com/Develekko/Social-Backend-Api#-api-documentation"})
