@@ -37,8 +37,11 @@ export const signUp = asyncHandler(async (req, res, next) => {
     phone,
     gender
   });
-  const __dirname = path.dirname(fileURLToPath(import.meta.url))
-  const fullpath = path.join(__dirname,`../../../../public/userProfile/${user.gender == 'male'?'male.jpg':'female.jpg'}`)
+  //const __dirname =path.dirname(fileURLToPath(import.meta.url))
+  //const fullpath = path.join(__dirname,`../../../../public/userProfile/${user.gender //==='male'?'male.jpg':'female.jpg'}`)
+
+const fullpath = path.join(process.cwd(), 'public', 'userProfile', `${user.gender === 'male' ? 'male.jpg' : 'female.jpg'}`);
+
   const {secure_url,public_id} = await cloudinary.uploader.upload(fullpath,{
     folder:`${process.env.APP_NAME}/users/${user._id}/profile`
   })
